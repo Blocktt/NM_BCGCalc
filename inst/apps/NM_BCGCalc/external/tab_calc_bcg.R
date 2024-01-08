@@ -44,16 +44,16 @@ function() {
         )## sidebarPanel ~ END
     , mainPanel(
         tabsetPanel(type = "tabs"
-                    , tabPanel(title = "Calc_BCG_About"
-                               ,includeHTML(file.path("www"
-                                                      , "rmd_html"
-                                            , "ShinyHTML_Calc_BCG_1About.html"))
-                               )
-                    , tabPanel(title = "Calc_BCG_Input"
-                               ,includeHTML(file.path("www"
-                                                      , "rmd_html"
-                                            , "ShinyHTML_Calc_BCG_2Input.html"))
-                               )
+                    # , tabPanel(title = "Calc_BCG_About"
+                    #            ,includeHTML(file.path("www"
+                    #                                   , "rmd_html"
+                    #                         , "ShinyHTML_Calc_BCG_1About.html"))
+                    #            )
+                    # , tabPanel(title = "Calc_BCG_Input"
+                    #            ,includeHTML(file.path("www"
+                    #                                   , "rmd_html"
+                    #                         , "ShinyHTML_Calc_BCG_2Input.html"))
+                    #            )
                     , tabPanel(title = "Calc_BCG_Output"
                                ,includeHTML(file.path("www"
                                                       , "rmd_html"

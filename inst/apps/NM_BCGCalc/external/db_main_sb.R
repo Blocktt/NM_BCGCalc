@@ -35,10 +35,10 @@ function(id) {
                  #               , tabName = "tab_filebuilder_indexclass"
                  #               , icon = icon("address-book")
                  #               )
-                 , menuSubItem("Merge Files"
-                               , tabName = "tab_filebuilder_mergefiles"
-                               , icon = icon("code-merge")
-                               )
+                 # , menuSubItem("Merge Files"
+                 #               , tabName = "tab_filebuilder_mergefiles"
+                 #               , icon = icon("code-merge")
+                 #               )
                  )## menuItem ~ File Builder
       , menuItem(text = "Calculation"
                  , icon = icon("gears")
