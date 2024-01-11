@@ -17,10 +17,10 @@ knitr::opts_chunk$set(echo = FALSE
 # Background
 
 This website calculates Biological Condition Gradient (BCG) scores for
-benthic macroinvertebrate (hereafter \"bugs\") and fish samples
-collected from sandy bottom rivers in New Mexico (Figure 1). The USEPA
-has published a practitioner\'s guide to BCG development that would be
-useful introductory reading for someone new to the BCG framework
+benthic macroinvertebrate (hereafter "bugs") and fish samples collected
+from sandy bottom rivers in New Mexico (Figure 1). The USEPA has
+published a practitioner's guide to BCG development that would be useful
+introductory reading for someone new to the BCG framework
 (<a href="https://www.epa.gov/sites/default/files/2016-02/documents/bcg-practioners-guide-report.pdf" target="_blank">USEPA
 2016</a>). A concise reporting on the development of the New Mexico Bug
 and Fish BCG models was published by
@@ -104,3 +104,58 @@ the following criteria:
 For more information on sampling methodologies and application limits,
 see the New Mexico BCG development report
 <a href="https://raw.githubusercontent.com/Blocktt/ShinyAppDocuments/main/NM_BCGCalc/Reports/NMBCG_20201208_Final.docx" target="_blank">here</a>.
+
+# Bugs Model
+
+Table 1 summarizes the NM BCG Bug Model metrics, metric membership
+rules, and level membership rules. Note, that Table X deviates from the
+table published in Hughes et al. 2022 in the following:
+
+-   *BCG Level 3; Number taxa - Habit - clingers (CN) metric*: Metric
+    included in BCG Level 3 model, but not reported in Hughes et al.
+    (2022).
+
+These differences correspond to the rules that were developed by Tetra
+Tech and will be corrected by the publication's authors at a future
+date.
+
+*Table 1. NM BCG Bug Model metrics per level, their equivalent names in
+the BioMonTools package, and quantitative rules. Below each level are
+the level membership rules.*
+
+![](images/About_Fig2_BugModel.jpg){width="50%"}
+
+Table 2 summarizes the NM BCG Fish Model metrics, metric membership
+rules, and level membership rules. Note, that Table X deviates from the
+table published in Hughes et al. 2022 in the following:
+
+-   *BCG Level 2; BCG attribute I, II, III, IV % individuals metric*:
+    Upper value should be 70% rather than 60% as reported in Hughes et
+    al. (2022).
+
+-   *BCG Level 3; Native minnow BCG attribute I, II, III, IV taxa
+    richness metric*: Lower value should be 3 rather than 2 as reported
+    in Hughes et al. (2022).
+
+-   *BCG Level 3; Number of trophic categories metric*: Upper value
+    should be 4 rather than 3 as reported in Hughes et al. (2022).
+
+-   *BCG Level 3; Number of individuals*: Upper value should be 120
+    rather than 129 as reported in Hughes et al. (2022).
+
+-   *BCG Level 4; BCG attribute I, II, III, IV % taxa metric*: This
+    metric was not included in model development for BCG Level 4 but was
+    erroneously reported in Hughes et al. (2022).
+
+-   *BCG Level 4; Number of trophic categories metric*: Lower value
+    should be 1 rather than 2 as reported in Hughes et al. (2022).
+
+These differences correspond to the rules that were developed by Tetra
+Tech and will be corrected by the publication's authors at a future
+date.
+
+*Table 2. NM BCG Fish Model metrics per level, their equivalent names in
+the BioMonTools package, and quantitative rules. Below each level are
+the level membership rules.*
+
+![](images/About_Fig3_FishModel.jpg){width="50%"}

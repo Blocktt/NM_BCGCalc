@@ -15,6 +15,15 @@ function(id) {
       , menuItem(text = "About"
                , tabName = "tab_about"
                , icon = icon("house")
+               # , menuSubItem("Background"
+               #               , tabName = "tab_about_backgrnd"
+               #               , icon = icon("house"))
+               # , menuSubItem("Bugs Model"
+               #               , tabName = "tab_about_bugs"
+               #               , icon = icon("clipboard"))
+               # , menuSubItem("Fish Model"
+               #               , tabName = "tab_about_bugs"
+               #               , icon = icon("clipboard"))
                )## menuItem ~ About ~ END
       , menuItem(text = "Import Files"
                  , tabName = "tab_import"
