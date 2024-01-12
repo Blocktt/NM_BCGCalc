@@ -1,7 +1,7 @@
 # Shiny Global File
 
 # Version ----
-pkg_version <- "0.0.0.9040"
+pkg_version <- "0.0.0.9050"
 
 # Packages----
 # nolint start
@@ -55,6 +55,10 @@ tab_code_about                 <- source("external/tab_about.R"
 tab_code_import                <- source("external/tab_import.R"
                                          , local = TRUE)$value
 tab_code_filebuilder           <- source("external/tab_filebuilder.R"
+                                         , local = TRUE)$value
+tab_code_filebuilder_intro           <- source("external/tab_filebuilder_intro.R"
+                                         , local = TRUE)$value
+tab_code_filebuilder_outsideapp           <- source("external/tab_filebuilder_outsideapp.R"
                                          , local = TRUE)$value
 tab_code_filebuilder_taxatrans <- source("external/tab_filebuilder_taxatrans.R"
                                          , local = TRUE)$value

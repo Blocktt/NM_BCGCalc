@@ -39,7 +39,7 @@ validating the biological condition gradient for sandy bottom rivers in
 the western USA. Taken from Hughes et al.
 2022.](images/About_Fig1_StudyArea.jpg){width="50%"}
 
-# Funding and Acknowledgments
+# Funding and acknowledgments
 
 Development of NMBCGCalc and the underlying BCG model was funded by the
 U.S. EPA. For more information, please contact Susan Jackson
@@ -70,14 +70,14 @@ practitioners to identify degradation in biological integrity and water
 quality. It is intended to be applied to bug and fish samples that meet
 the following criteria:
 
-**Geographic area**: sandy-bottom southwestern rivers
+**Geographic area**: Sandy-bottom southwestern rivers.
 
-**Stream type**: sandy-bottom freshwater rivers, wadeable or boatable
+**Stream type**: Sandy-bottom freshwater rivers, wadeable or boatable
 (limited to large systems with Strahler order 5 or larger).
 
 **Subsample size**:
 
--   Bugs: 300-count samples are recommended for best performance
+-   Bugs: 300-count samples are recommended for best performance.
 
 -   Fish: NA
 
@@ -105,10 +105,10 @@ For more information on sampling methodologies and application limits,
 see the New Mexico BCG development report
 <a href="https://raw.githubusercontent.com/Blocktt/ShinyAppDocuments/main/NM_BCGCalc/Reports/NMBCG_20201208_Final.docx" target="_blank">here</a>.
 
-# Bugs Model
+# Bugs model
 
 Table 1 summarizes the NM BCG Bug Model metrics, metric membership
-rules, and level membership rules. Note, that Table X deviates from the
+rules, and level membership rules. Note, that Table 1 deviates from the
 table published in Hughes et al. 2022 in the following:
 
 -   *BCG Level 3; Number taxa - Habit - clingers (CN) metric*: Metric
@@ -125,8 +125,10 @@ the level membership rules.*
 
 ![](images/About_Fig2_BugModel.jpg){width="50%"}
 
+# Fish model
+
 Table 2 summarizes the NM BCG Fish Model metrics, metric membership
-rules, and level membership rules. Note, that Table X deviates from the
+rules, and level membership rules. Note, that Table 2 deviates from the
 table published in Hughes et al. 2022 in the following:
 
 -   *BCG Level 2; BCG attribute I, II, III, IV % individuals metric*:

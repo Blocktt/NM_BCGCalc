@@ -23,7 +23,7 @@ function() {
                        , TRUE)
 
        , h4("D. Define BCG Model")
-       , p("Determined by INDEX_NAME and INDEX_CLASS in data input file.")
+       , p("Determined by Community chosen in Step B.")
        # , selectInput("si_model"
        #               , label = "BCG Model"
        #               , choices = sel_bcg_models

@@ -4,23 +4,23 @@
 <div id="purpose" class="section level1">
 <h1>Purpose</h1>
 <p>Create an input file with the proper Operational Taxonomic Units
-(OTUs) and attributes for each calculation.</p>
-<p>OTUs differ across calculations. For example, for the BCG model
-calculation, worms are collapsed to Subclass and mites to Order-level.
-For the thermal preference metric calculations, mites and worms are kept
-at the lowest practical taxonomic level.</p>
+(OTUs) and attributes for each calculation. Bug and fish files should be
+created separately.</p>
 <p>This function performs two steps to the input file:</p>
 <ol style="list-style-type: decimal">
 <li><p>“Translates” the original TaxonID to the proper OTU based on the
-selected calculation</p></li>
-<li><p>Appends the Pacific Northwest taxa attributes, which include the
-Maritime Region BCG taxa attributes, functional feeding group and
-thermal preference assignments, and more.</p></li>
+selected calculation.</p></li>
+<li><p>Appends the New Mexico taxa attributes, which include
+phylogenetic data for both bugs and fish. For bugs, traits include
+functional feeding group (FFG), habit (Habit), tolerance value (TolVal),
+and BCG attributes (BCG_ATTR). For fish, traits include trophic Type
+(Trophic), reproduction type (Reproduction), BCG attributes (BCG_ATTR),
+and whether the taxon is a long-lived, native, large-bodied species
+(LLNLB in Type field).</p></li>
 </ol>
-<p>The ‘taxa translator’ and attribute tables are based on stream
-biomonitoring data from Oregon and Washington and will be updated on an
-annual basis. If you have questions or comments about these tables, or
-want to request the addition of new taxa, please email Sean Sullivan (<a href="mailto:ssullivan@rhithron.com" class="email">ssullivan@rhithron.com</a>).</p>
+<p>The ‘taxa translator’ and attribute tables are based on river
+biomonitoring data from sandy bottom rivers in the southwestern U.S. and
+will be updated on an annual basis.</p>
 <p>Click
 <a href="https://github.com/leppott/BioMonTools_SupportFiles/tree/main/data/taxa_official" target="_blank">here</a>
 to download the tables and associated metadata files from GitHub.</p>
@@ -64,14 +64,11 @@ the richness metrics.</p>
 </div>
 <div id="test-file" class="section level1">
 <h1>Test File</h1>
-<p>Click <a href="links/Test1_FileBuilder_TaxaTransAttr.csv">here</a> to
-download a test file.</p>
-<p>Note that there is one taxon (Atherix) in the input file that comes
-out as a ‘nonmatch.’ This is because it has a trailing space. R is
-sensitive to leading and trailing spaces and is also case sensitive (for
-example, it recognizes ‘A’ and ‘a’ as different variables).</p>
-<p>Click <a href="links/examples_all.zip">here</a> to download example R
-scripts and data (all functions).</p>
-<hr />
-<p><em>Last updated 2023-02-02</em></p>
+<p>Click here to download a test file for
+<a href="https://raw.githubusercontent.com/Blocktt/ShinyAppDocuments/main/NM_BCGCalc/Example_Files/NM_BCG_Bugs_Count_Data_20240111.csv" target="_blank">bugs</a>
+or
+<a href="https://raw.githubusercontent.com/Blocktt/ShinyAppDocuments/main/NM_BCGCalc/Example_Files/NM_BCG_Fish_Count_Data_20240111.csv" target="_blank">fish</a>.</p>
+<p>Click
+<a href="https://github.com/Blocktt/ShinyAppDocuments/tree/main/NM_BCGCalc/Example_Files/" target="_blank">here</a>
+to download example R scripts and data (all functions).</p>
 </div>
