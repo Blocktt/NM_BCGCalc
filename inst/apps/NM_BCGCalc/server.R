@@ -2531,11 +2531,11 @@ shinyServer(function(input, output) {
 
       path_results_ref <- file.path(path_results, dn_files_ref)
 
-      ## Index Class
-      fn_save <- "IndexClass.xlsx"
-      file_from <- temp_indexclass_crit
-      file_to <- file.path(path_results_ref, fn_save)
-      file.copy(file_from, file_to)
+      # ## Index Class
+      # fn_save <- "IndexClass.xlsx"
+      # file_from <- temp_indexclass_crit
+      # file_to <- file.path(path_results_ref, fn_save)
+      # file.copy(file_from, file_to)
 
       ## Metric Flags
       fn_save <- "MetricFlags.xlsx"
