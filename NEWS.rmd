@@ -21,6 +21,12 @@ knitr::opts_chunk$set(
 cat(paste0("Last Update: ",Sys.time()))
 ```
 
+# NM_BCGCalc 0.0.0.9040 (2024-01-12)
+
+* Removed RedLakesCalc specific code for functionality.
+* Added NM BCG specific code.
+* Tested and confirmed operation of BCG calculations and file builder.
+
 # NM_BCGCalc 0.0.0.9001 (2024-01-08)
 
 * docs: Add base package files from RedLakesCalc (leppott)
