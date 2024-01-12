@@ -144,29 +144,29 @@ df_checks <- as.data.frame(readxl::read_excel(temp_bcg_checks, sheet = "Flags"))
 # BMT, Taxa Official Pick----
 url_taxa_official_pick <- file.path(url_bmt_base
                                     , "taxa_official"
-                                    , "_pick_files_RedLakes.csv")
+                                    , "NM_BCG_Pick_Files.csv")
 temp_taxa_official_pick <- tempfile(fileext = ".csv")
 httr::GET(url_taxa_official_pick, httr::write_disk(temp_taxa_official_pick))
 
 df_pick_taxoff <- read.csv(temp_taxa_official_pick)
 
 # BMT, Index Class ----
-url_indexclass_crit <- file.path(url_bmt_base
-                                 , "index_class"
-                                 , "IndexClass.xlsx")
-temp_indexclass_crit <- tempfile(fileext = ".xlsx")
-httr::GET(url_indexclass_crit, write_disk(temp_indexclass_crit))
+# url_indexclass_crit <- file.path(url_bmt_base
+#                                  , "index_class"
+#                                  , "IndexClass.xlsx")
+# temp_indexclass_crit <- tempfile(fileext = ".xlsx")
+# httr::GET(url_indexclass_crit, write_disk(temp_indexclass_crit))
+#
+# df_indexclass_crit <- readxl::read_excel(temp_indexclass_crit
+#                                          , sheet = "Index_Class")
 
-df_indexclass_crit <- readxl::read_excel(temp_indexclass_crit
-                                         , sheet = "Index_Class")
-
-## Index Class, Index Names----
-sel_indexclass_indexnames <- sort(unique(df_indexclass_crit[, "INDEX_NAME"
-                                                            , TRUE]))
-
-## Index Class, Index Names----
-sel_indexclass_params <- sort(unique(df_indexclass_crit[, "FIELD"
-                                                            , TRUE]))
+# ## Index Class, Index Names----
+# sel_indexclass_indexnames <- sort(unique(df_indexclass_crit[, "INDEX_NAME"
+#                                                             , TRUE]))
+#
+# ## Index Class, Index Names----
+# sel_indexclass_params <- sort(unique(df_indexclass_crit[, "FIELD"
+#                                                             , TRUE]))
 
 # BMT, Metric Names ----
 url_bmt_pkg <- "https://github.com/leppott/BioMonTools/raw/main/inst/extdata"
@@ -189,11 +189,11 @@ httr::GET(url_metricscoring, httr::write_disk(temp_metricscoring))
 #                                      , skip = 4)
 
 # BMT, Fuzzy Therm Narrative ----
-url_fuzzytherm_crit <- file.path(url_bmt_base
-                                 , "fuzzythermal"
-                                 , "FuzzyTherm_ScoringScale.xlsx")
-temp_fuzzytherm_crit <- tempfile(fileext = ".xlsx")
-httr::GET(url_fuzzytherm_crit, httr::write_disk(temp_fuzzytherm_crit))
-
-df_fuzzytherm_crit <- readxl::read_excel(temp_fuzzytherm_crit
-                                         , sheet = "Current")
+# url_fuzzytherm_crit <- file.path(url_bmt_base
+#                                  , "fuzzythermal"
+#                                  , "FuzzyTherm_ScoringScale.xlsx")
+# temp_fuzzytherm_crit <- tempfile(fileext = ".xlsx")
+# httr::GET(url_fuzzytherm_crit, httr::write_disk(temp_fuzzytherm_crit))
+#
+# df_fuzzytherm_crit <- readxl::read_excel(temp_fuzzytherm_crit
+#                                          , sheet = "Current")
