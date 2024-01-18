@@ -68,7 +68,7 @@ file.copy("NEWS.md", "NEWS", overwrite = TRUE)
 file.remove("NEWS.html")
 #file.remove("NEWS.md")
 #
-myPkg <- "BCGcalc"
+myPkg <- "NM_BCGCalc"
 # Load Library
 library(devtools)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -96,7 +96,7 @@ After creating the package reload it after restarting R within RStudio (Ctrl + S
 
 ```{r, eval=FALSE}
 # Restart R within RStudio:  Ctrl + Shift + F10
-myPkg <- "BCGcalc"
+myPkg <- "NM_BCGCalc"
 library(myPkg, character.only = TRUE)
 help(package=(myPkg))
 library(testthat)
@@ -112,7 +112,7 @@ Add "/_test" to gitignore
 (Needs tweaking to get it working properly)
 
 ```{r AllExamples, eval=FALSE}
-pkg <- "BCGcalc"
+pkg <- "NM_BCGCalc"
 setwd("./_test")
 devtools::run_examples(pkg=pkg)
 ```

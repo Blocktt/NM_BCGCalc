@@ -753,9 +753,10 @@ shinyServer(function(input, output) {
                             , OperationalTaxonomicUnit = col_taxaid_official_project
                             , TranslationTable = fn_taxoff
                             , AttributeTable = fn_taxoff_attr)
-      fn_part <- paste0("_", abr_filebuilder, "_0taxasource", ".csv")
+      # fn_part <- paste0("_", abr_filebuilder, "_0taxasource", ".csv")
+      fn_part <- "BCG_TaxaTranslator_source.csv"
       write.csv(df_save
-                , file.path(path_results_sub, paste0(fn_input_base, fn_part))
+                , file.path(path_results_sub, fn_part)
                 , row.names = FALSE)
       rm(df_save, fn_part)
 
@@ -807,25 +808,28 @@ shinyServer(function(input, output) {
 
       ## translate - crosswalk
       df_save <- taxatrans_results$taxatrans_unique # df_taxoff_meta
-      fn_part <- paste0(fn_abr_save, "2taxamatch", ".csv")
+      # fn_part <- paste0(fn_abr_save, "2taxamatch", ".csv")
+      fn_part <- "BCG_TaxaTranslator_modify.csv"
       write.csv(df_save
-                , file.path(path_results_sub, paste0(fn_input_base, fn_part))
+                , file.path(path_results_sub, fn_part)
                 , row.names = FALSE)
       rm(df_save, fn_part)
 
       ## Non Match
       df_save <- data.frame(taxatrans_results$nonmatch)
-      fn_part <- paste0(fn_abr_save, "3nonmatch", ".csv")
+      # fn_part <- paste0(fn_abr_save, "3nonmatch", ".csv")
+      fn_part <- "BCG_TaxaTranslator_nonmatch.csv"
       write.csv(df_save
-                , file.path(path_results_sub, paste0(fn_input_base, fn_part))
+                , file.path(path_results_sub, fn_part)
                 , row.names = FALSE)
       rm(df_save, fn_part)
 
       ## Taxa Trans
       df_save <- taxatrans_results$merge
-      fn_part <- paste0(fn_abr_save, "4taxaattr", ".csv")
+      # fn_part <- paste0(fn_abr_save, "4taxaattr", ".csv")
+      fn_part <- "BCG_TaxaTranslator_TAXAATTR.csv"
       write.csv(df_save
-                , file.path(path_results_sub, paste0(fn_input_base, fn_part))
+                , file.path(path_results_sub, fn_part)
                 , row.names = FALSE)
       rm(df_save, fn_part)
 
@@ -857,10 +861,13 @@ shinyServer(function(input, output) {
       duration <- difftime(toc, tic)
 
       # pop up
-      msg <- paste0("Total Records (Input) = ", nrow(df_input)
-                    , "\n\n"
-                    , "Elapse Time (", units(duration), ") = ", round(duration, 2))
-      shinyalert::shinyalert(title = "Task Compete"
+      # Inform user about number of taxa mismatches
+      ## calc number of mismatch
+      df_mismatch <- data.frame(taxatrans_results$nonmatch)
+      n_taxa_mismatch <- nrow(df_mismatch)
+      msg <- paste0("Number of mismatch taxa = ", n_taxa_mismatch, "\n\n"
+                    , "Any mismatched taxa in 'mismatch' file in results download.")
+      shinyalert::shinyalert(title = "Task Complete"
                              , text = msg
                              , type = "success"
                              , closeOnEsc = TRUE
@@ -2088,7 +2095,7 @@ shinyServer(function(input, output) {
 
       # pop up
       msg <- paste0("Elapse Time (", units(duration), ") = ", round(duration, 2))
-      shinyalert::shinyalert(title = "Task Compete"
+      shinyalert::shinyalert(title = "Task Complete"
                              , text = msg
                              , type = "success"
                              , closeOnEsc = TRUE
@@ -2260,7 +2267,8 @@ shinyServer(function(input, output) {
                                               , Exceptions = NA)
 
         # Save Results
-        fn_excl <- paste0(fn_input_base, fn_abr_save, "1markexcl.csv")
+        # fn_excl <- paste0(fn_input_base, fn_abr_save, "1markexcl.csv")
+        fn_excl <- "BCG_1markexcl.csv"
         dn_excl <- path_results_sub
         pn_excl <- file.path(dn_excl, fn_excl)
         write.csv(df_input, pn_excl, row.names = FALSE)
@@ -2299,7 +2307,8 @@ shinyServer(function(input, output) {
       df_rules <- df_bcg_models[df_bcg_models$Index_Name == import_IndexName
                                 , !names(df_bcg_models) %in% c("SITE_TYPE", "INDEX_REGION")]
       # Save
-      fn_rules <- paste0(fn_input_base, fn_abr_save, "3metrules.csv")
+      # fn_rules <- paste0(fn_input_base, fn_abr_save, "3metrules.csv")
+      fn_rules <- "BCG_3metrules.csv"
       dn_rules <- path_results_sub
       pn_rules <- file.path(dn_rules, fn_rules)
       write.csv(df_rules, pn_rules, row.names = FALSE)
@@ -2337,7 +2346,8 @@ shinyServer(function(input, output) {
 
       ### Save Results ----
 
-      fn_metval <- paste0(fn_input_base, fn_abr_save, "2metval_all.csv")
+      # fn_metval <- paste0(fn_input_base, fn_abr_save, "2metval_all.csv")
+      fn_metval <- "BCG_2metvall_all.csv"
       dn_metval <- path_results_sub
       pn_metval <- file.path(dn_metval, fn_metval)
       write.csv(df_metval, pn_metval, row.names = FALSE)
@@ -2355,7 +2365,8 @@ shinyServer(function(input, output) {
                                           , cols_model_metrics))
       df_metval_slim <- df_metval[, names(df_metval) %in% cols_metrics_flags_keep]
       # Save
-      fn_metval_slim <- paste0(fn_input_base, fn_abr_save, "2metval_BCG.csv")
+      # fn_metval_slim <- paste0(fn_input_base, fn_abr_save, "2metval_BCG.csv")
+      fn_metval_slim <- "BCG_2metval_BCG.csv"
       dn_metval_slim <- path_results_sub
       pn_metval_slim <- file.path(dn_metval_slim, fn_metval_slim)
       write.csv(df_metval_slim, pn_metval_slim, row.names = FALSE)
@@ -2371,7 +2382,8 @@ shinyServer(function(input, output) {
       # Calc
       df_metmemb <- BCGcalc::BCG.Metric.Membership(df_metval, df_bcg_models)
       # Save Results
-      fn_metmemb <- paste0(fn_input_base, fn_abr_save, "3metmemb.csv")
+      # fn_metmemb <- paste0(fn_input_base, fn_abr_save, "3metmemb.csv")
+      fn_metmemb <- "BCG_3metmemb.csv"
       dn_metmemb <- path_results_sub
       pn_metmemb <- file.path(dn_metmemb, fn_metmemb)
       write.csv(df_metmemb, pn_metmemb, row.names = FALSE)
@@ -2387,7 +2399,8 @@ shinyServer(function(input, output) {
       # Calc
       df_levmemb <- BCGcalc::BCG.Level.Membership(df_metmemb, df_bcg_models)
       # Save Results
-      fn_levmemb <- paste0(fn_input_base, fn_abr_save, "4levmemb.csv")
+      # fn_levmemb <- paste0(fn_input_base, fn_abr_save, "4levmemb.csv")
+      fn_levmemb <- "BCG_4levmemb.csv"
       dn_levmemb <- path_results_sub
       pn_levmemb <- file.path(dn_levmemb, fn_levmemb)
       write.csv(df_levmemb, pn_levmemb, row.names = FALSE)
@@ -2403,7 +2416,8 @@ shinyServer(function(input, output) {
       # Calc
       df_levassign <- BCGcalc::BCG.Level.Assignment(df_levmemb)
       # Save Results
-      fn_levassign <- paste0(fn_input_base, fn_abr_save, "5levassign.csv")
+      # fn_levassign <- paste0(fn_input_base, fn_abr_save, "5levassign.csv")
+      fn_levassign <- "BCG_5levassign.csv"
       dn_levassign <- path_results_sub
       pn_levassign <- file.path(dn_levassign, fn_levassign)
       write.csv(df_levassign, pn_levassign, row.names = FALSE)
@@ -2485,19 +2499,22 @@ shinyServer(function(input, output) {
 
 
       # Save, Flags Summary
-      fn_levflags <- paste0(fn_input_base, fn_abr_save, "6levflags.csv")
+      # fn_levflags <- paste0(fn_input_base, fn_abr_save, "6levflags.csv")
+      fn_levflags <- "BCG_6levflags.csv"
       dn_levflags <- path_results_sub
       pn_levflags <- file.path(dn_levflags, fn_levflags)
       write.csv(df_lev_flags_summ, pn_levflags, row.names = TRUE)
 
       # Save, Results
-      fn_results <- paste0(fn_input_base, fn_abr_save, "RESULTS.csv")
+      # fn_results <- paste0(fn_input_base, fn_abr_save, "RESULTS.csv")
+      fn_results <- "_BCG_RESULTS.csv"
       dn_results <- path_results_sub
       pn_results <- file.path(dn_results, fn_results)
       write.csv(df_results, pn_results, row.names = FALSE)
 
       # Save, Flag Metrics
-      fn_metflags <- paste0(fn_input_base, fn_abr_save, "6metflags.csv")
+      # fn_metflags <- paste0(fn_input_base, fn_abr_save, "6metflags.csv")
+      fn_metflags <- "BCG_6metflags.csv"
       dn_metflags <- path_results_sub
       pn_metflags <- file.path(dn_metflags, fn_metflags)
       write.csv(df_metflags, pn_metflags, row.names = FALSE)
@@ -2514,7 +2531,8 @@ shinyServer(function(input, output) {
                                , "RMD_Results"
                                , "Results_BCG_Summary.Rmd")
       strFile.RMD.format <- "html_document"
-      strFile.out <- paste0(fn_input_base, fn_abr_save, "RESULTS.html")
+      # strFile.out <- paste0(fn_input_base, fn_abr_save, "RESULTS.html")
+      strFile.out <- "_BCG_RESULTS.html"
       dir.export <- path_results_sub
       rmarkdown::render(strFile.RMD
                         , output_format = strFile.RMD.format
@@ -2585,7 +2603,7 @@ shinyServer(function(input, output) {
       msg <- paste0("Total Records (Input) = ", nrow(df_input)
                     , "\n\n"
                     , "Elapse Time (", units(duration), ") = ", round(duration, 2))
-      shinyalert::shinyalert(title = "Task Compete"
+      shinyalert::shinyalert(title = "Task Complete"
                              , text = msg
                              , type = "success"
                              , closeOnEsc = TRUE
