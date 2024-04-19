@@ -1,10 +1,9 @@
 # Shiny Global File
 
 # Version ----
-pkg_version <- "0.0.1.9000"
+pkg_version <- "0.0.1.9001"
 
 # Packages----
-# nolint start
 library(BCGcalc)
 library(BioMonTools)
 library(shiny)
@@ -15,27 +14,16 @@ library(shinyBS)
 library(DT)
 library(dplyr)
 library(ggplot2)
-library(plotly)
 library(readxl)
 library(httr)
 library(reshape2)
 library(knitr)
-library(leaflet)
-library(rioja)   # MTTI model predict
 library(zip)
-library(StreamCatTools)
-library(nhdplusTools)
-library(ComplexUpset)
-# MTTI
-#library(plyr) # ok server 3567, MTTI?
-# library(tidyr)
-# library(tibble)
-library(shinyalert)#ok
-library(readr)#ok
-library(rmarkdown) #ok
-library(tools)#ok
-library(openxlsx) #ok
-# nolint end
+library(shinyalert)
+library(readr)
+library(rmarkdown)
+library(tools)
+library(openxlsx)
 
 # Source ----
 
@@ -61,9 +49,6 @@ tab_code_filebuilder_intro           <- source("external/tab_filebuilder_intro.R
 tab_code_filebuilder_outsideapp           <- source("external/tab_filebuilder_outsideapp.R"
                                          , local = TRUE)$value
 tab_code_filebuilder_taxatrans <- source("external/tab_filebuilder_taxatrans.R"
-                                         , local = TRUE)$value
-tab_code_filebuilder_mergefiles <- source(
-                                         "external/tab_filebuilder_mergefiles.R"
                                          , local = TRUE)$value
 tab_code_calc_bcg              <- source("external/tab_calc_bcg.R"
                                          , local = TRUE)$value
@@ -92,29 +77,10 @@ if (dir.exists(path_results) == FALSE) {
 # File and Folder Names ----
 abr_filebuilder <- "FB"
 abr_taxatrans   <- "TaxaTranslator"
-abr_classparam  <- "ClassParam"
-abr_classassign <- "ClassAssign"
-abr_mergefiles  <- "MergeFiles"
-abr_bcg         <- "BCG"
-abr_tmet        <- "ThermMet"
-abr_fuzzy       <- "FuzzyTemp"
-abr_mtti        <- "MTTI"
-abr_bdi         <- "BDI"
-abr_bsti        <- "BSTI"
-abr_map         <- "map"
-abr_report      <- "report"
 abr_results     <- "results"
-
-dn_files_input  <- "_user_input"
+abr_bcg         <- "BCG"
 dn_files_ref    <- "reference"
-dn_files_fb     <- paste(abr_results, abr_filebuilder, sep = "_")
-dn_files_bcg    <- paste(abr_results, abr_bcg, sep = "_")
-dn_files_tmet   <- paste(abr_results, abr_tmet, sep = "_")
-dn_files_fuzzy  <- paste(abr_results, abr_fuzzy, sep = "_")
-dn_files_mtti   <- paste(abr_results, abr_mtti, sep = "_")
-dn_files_bdi    <- paste(abr_results, abr_bdi, sep = "_")
-dn_files_bsti   <- paste(abr_results, abr_bsti, sep = "_")
-dn_files_report <- paste(abr_results, abr_report, sep = "_")
+dn_files_input  <- "_user_input"
 
 # Selection Choices----
 sel_community <- c("bugs", "fish")
@@ -129,11 +95,7 @@ httr::GET(url_bcg_models, httr::write_disk(temp_bcg_models))
 df_bcg_models <- as.data.frame(readxl::read_excel(temp_bcg_models
                                                   , guess_max = 10^3
                                                   , sheet = "Rules"))
-#sel_bcg_models <- sort(unique(df_bcg_models$Index_Name))
 sel_bcg_models <- "BCG_NMSandyRivers"
-
-## Metric Suites
-sel_metric_suites <- ("ThermalHydro")
 
 ## URL BioMonTools
 url_bmt_base <- "https://github.com/leppott/BioMonTools_SupportFiles/raw/main/data"
@@ -154,24 +116,6 @@ httr::GET(url_taxa_official_pick, httr::write_disk(temp_taxa_official_pick))
 
 df_pick_taxoff <- read.csv(temp_taxa_official_pick)
 
-# BMT, Index Class ----
-# url_indexclass_crit <- file.path(url_bmt_base
-#                                  , "index_class"
-#                                  , "IndexClass.xlsx")
-# temp_indexclass_crit <- tempfile(fileext = ".xlsx")
-# httr::GET(url_indexclass_crit, write_disk(temp_indexclass_crit))
-#
-# df_indexclass_crit <- readxl::read_excel(temp_indexclass_crit
-#                                          , sheet = "Index_Class")
-
-# ## Index Class, Index Names----
-# sel_indexclass_indexnames <- sort(unique(df_indexclass_crit[, "INDEX_NAME"
-#                                                             , TRUE]))
-#
-# ## Index Class, Index Names----
-# sel_indexclass_params <- sort(unique(df_indexclass_crit[, "FIELD"
-#                                                             , TRUE]))
-
 # BMT, Metric Names ----
 url_bmt_pkg <- "https://github.com/leppott/BioMonTools/raw/main/inst/extdata"
 url_metricnames <- file.path(url_bmt_pkg, "MetricNames.xlsx")
@@ -181,23 +125,3 @@ httr::GET(url_metricnames, httr::write_disk(temp_metricnames))
 df_metricnames <- readxl::read_excel(temp_metricnames
                                      , sheet = "MetricMetadata"
                                      , skip = 4)
-
-# BMT, Metric Scoring ----
-url_bmt_pkg <- "https://github.com/leppott/BioMonTools/raw/main/inst/extdata"
-url_metricscoring <- file.path(url_bmt_pkg, "MetricScoring.xlsx")
-temp_metricscoring <- tempfile(fileext = ".xlsx")
-httr::GET(url_metricscoring, httr::write_disk(temp_metricscoring))
-
-# df_metricscoring <- readxl::read_excel(temp_metricnames
-#                                      , sheet = "MetricMetadata"
-#                                      , skip = 4)
-
-# BMT, Fuzzy Therm Narrative ----
-# url_fuzzytherm_crit <- file.path(url_bmt_base
-#                                  , "fuzzythermal"
-#                                  , "FuzzyTherm_ScoringScale.xlsx")
-# temp_fuzzytherm_crit <- tempfile(fileext = ".xlsx")
-# httr::GET(url_fuzzytherm_crit, httr::write_disk(temp_fuzzytherm_crit))
-#
-# df_fuzzytherm_crit <- readxl::read_excel(temp_fuzzytherm_crit
-#                                          , sheet = "Current")

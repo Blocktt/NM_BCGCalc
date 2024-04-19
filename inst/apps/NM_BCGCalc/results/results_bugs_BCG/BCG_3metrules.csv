@@ -1,0 +1,32 @@
+"Index_Name","INDEX_CLASS","Level","Metric_Name","Numeric_Rules","Symbol","Lower","Upper","Increase","Description","Rule_Type","Exc_Rule","Note_Rule"
+"NM_Bugs_BCG","SandyBottomRivers",2,"nt_total",">=30 (25 - 35)",">=",25,35,TRUE,"number taxa - total","Rule0","SMALL2",NA
+"NM_Bugs_BCG","SandyBottomRivers",2,"nt_EPT",">=12 (10 - 14)",">=",10,14,TRUE,"number taxa - Orders Ephemeroptera, Plecoptera, and Trichoptera (EPT)","Rule0","SMALL2",NA
+"NM_Bugs_BCG","SandyBottomRivers",2,"nt_TrichNoHydro",">=4 (3-5)",">=",3,5,TRUE,"number taxa - Order Trichoptera and not Family Hydropsychidae","Rule0","SMALL2",NA
+"NM_Bugs_BCG","SandyBottomRivers",2,"pi_EPT",">=40% (35 - 45)",">=",35,45,TRUE,"percent (0-100) individuals - Orders Ephemeroptera, Plecoptera, and Trichoptera (EPT)","Rule0","SMALL2",NA
+"NM_Bugs_BCG","SandyBottomRivers",2,"nt_Mol_Non_BCG_att6",">0 (0-1)",">",0,1,TRUE,"number taxa - Phylum Mollusca","Rule0","SMALL2",NA
+"NM_Bugs_BCG","SandyBottomRivers",2,"pi_NonIns","<=20% (15 - 25)","<=",15,25,FALSE,"percent (0-100) individuals - Class not Insecta","Rule0","SMALL2",NA
+"NM_Bugs_BCG","SandyBottomRivers",2,"nt_habit_cling",">=11 (10 - 12)",">=",10,12,TRUE,"number taxa - Habit - clingers (CN)","Rule0","SMALL2",NA
+"NM_Bugs_BCG","SandyBottomRivers",2,"pi_ffg_col","<=50% (40 - 60)","<=",40,60,FALSE,"percent (0-100) individuals - Functional Feeding Group (FFG) - collector-gatherer (CG or GC)","Rule0","SMALL2",NA
+"NM_Bugs_BCG","SandyBottomRivers",2,"ni_total_300",">=50% (40 - 60)",">=",40,60,TRUE,"% target sub-sample size. Calculated as 100*(ni_total / target sub-sample size). Target sub-sample size is 300 individuals.","Rule0","SMALL2",NA
+"NM_Bugs_BCG","SandyBottomRivers",2,"nt_ffg_shred",">=6 (5 - 7)",">=",5,7,TRUE,"number taxa - Functional Feeding Group (FFG) - shredder (SH)","Rule0","SMALL2",NA
+"NM_Bugs_BCG","SandyBottomRivers",3,"nt_total",">= 20 (15 - 25)",">=",15,25,TRUE,"number taxa - total","Rule0","SMALL3",NA
+"NM_Bugs_BCG","SandyBottomRivers",3,"nt_EPT",">=7 (5 - 10)",">=",5,10,TRUE,"number taxa - Orders Ephemeroptera, Plecoptera, and Trichoptera (EPT)","Rule0","SMALL3",NA
+"NM_Bugs_BCG","SandyBottomRivers",3,"nt_TrichNoHydro",">=1 (0 - 1)",">=",0,2,TRUE,"number taxa - Order Trichoptera and not Family Hydropsychidae","Rule0","SMALL3",NA
+"NM_Bugs_BCG","SandyBottomRivers",3,"pi_EPT",">=25% (20 - 30)",">=",20,30,TRUE,"percent (0-100) individuals - Orders Ephemeroptera, Plecoptera, and Trichoptera (EPT)","Rule0","SMALL3",NA
+"NM_Bugs_BCG","SandyBottomRivers",3,"pi_NonIns","<20% (15 - 25)","<",15,25,FALSE,"percent (0-100) individuals - Class not Insecta","Rule0","SMALL3",NA
+"NM_Bugs_BCG","SandyBottomRivers",3,"nt_BCG_att123",">=2 (1 - 3)",">=",1,3,TRUE,"number taxa - BCG Attribute I + II + III","Rule0","SMALL3",NA
+"NM_Bugs_BCG","SandyBottomRivers",3,"pi_BCG_att5","<=7.5% (5 - 10)","<=",5,10,FALSE,"percent (0-100) individuals - BCG Attribute V","Rule0","SMALL3",NA
+"NM_Bugs_BCG","SandyBottomRivers",3,"nt_habit_cling",">= 5 (3 - 7)",">=",3,7,TRUE,"number taxa - Habit - clingers (CN)","Rule0","SMALL3",NA
+"NM_Bugs_BCG","SandyBottomRivers",3,"ni_total_300",">=50% (40 - 60)",">=",40,60,TRUE,"% target sub-sample size. Calculated as 100*(ni_total / target sub-sample size). Target sub-sample size is 300 individuals.","Rule0","SMALL3",NA
+"NM_Bugs_BCG","SandyBottomRivers",3,"nt_ffg_scrap",">=2 (1 - 3)",">=",1,3,TRUE,"number taxa - Functional Feeding Group (FFG) - scraper (SC)","Rule0","SMALL3",NA
+"NM_Bugs_BCG","SandyBottomRivers",3,"nt_ffg_shred",">=3 (2 - 4)",">=",2,4,TRUE,"number taxa - Functional Feeding Group (FFG) - shredder (SH)","Rule0","SMALL3",NA
+"NM_Bugs_BCG","SandyBottomRivers",3,"pi_Chiro","<=40% (35 - 45)","<=",35,45,FALSE,"percent (0-100) individuals - Family Chironomidae","Rule1","SMALL3","Rule1 (max) before Small3"
+"NM_Bugs_BCG","SandyBottomRivers",3,"nt_Chiro",">=10 (5 - 15)",">=",5,15,TRUE,"number taxa - Family Chironomidae","Rule1","SMALL3","Rule1 (max) before Small3"
+"NM_Bugs_BCG","SandyBottomRivers",4,"nt_total",">=15 (10 - 20)",">=",10,20,TRUE,"number taxa - total","Rule0","SMALL2",NA
+"NM_Bugs_BCG","SandyBottomRivers",4,"pi_EPT",">=15% (10 - 20)",">=",10,20,TRUE,"percent (0-100) individuals - Orders Ephemeroptera, Plecoptera, and Trichoptera (EPT)","Rule0","SMALL2",NA
+"NM_Bugs_BCG","SandyBottomRivers",4,"pi_NonIns","<20% (15 - 25)","<",15,25,FALSE,"percent (0-100) individuals - Class not Insecta","Rule0","SMALL2",NA
+"NM_Bugs_BCG","SandyBottomRivers",4,"ni_total_300",">=50% (40 - 60)",">=",40,60,TRUE,"% target sub-sample size. Calculated as 100*(ni_total / target sub-sample size). Target sub-sample size is 300 individuals.","Rule0","SMALL2",NA
+"NM_Bugs_BCG","SandyBottomRivers",4,"nt_ffg_scrap",">0 (0 - 1)",">",0,1,TRUE,"number taxa - Functional Feeding Group (FFG) - scraper (SC)","Rule0","SMALL2",NA
+"NM_Bugs_BCG","SandyBottomRivers",4,"nt_habit_cling",">=2 (1 - 3)",">=",1,3,TRUE,"number taxa - Habit - clingers (CN)","Rule0","SMALL2",NA
+"NM_Bugs_BCG","SandyBottomRivers",5,"nt_total",">=10 (5 - 15)",">=",5,15,TRUE,"number taxa - total","Rule0",NA,NA
+"NM_Bugs_BCG","SandyBottomRivers",5,"pi_EPT",">0.5 (0 - 1)",">",0,1,TRUE,"percent (0-100) individuals - Orders Ephemeroptera, Plecoptera, and Trichoptera (EPT)","Rule0",NA,NA

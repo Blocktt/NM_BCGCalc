@@ -24,12 +24,6 @@ function() {
 
        , h4("D. Define BCG Model")
        , p("Determined by Community chosen in Step B.")
-       # , selectInput("si_model"
-       #               , label = "BCG Model"
-       #               , choices = sel_bcg_models
-       #               , selected = "BCG_MariNW_Bugs500ct")
-       #, uiOutput("UI_col_calcmet_Cols2Keep")
-
        , h4("E. Run Calculations")
        , p("This button will calculate metrics values, metric memberships
            , level membership, and level assignment.")
@@ -44,16 +38,6 @@ function() {
         )## sidebarPanel ~ END
     , mainPanel(
         tabsetPanel(type = "tabs"
-                    # , tabPanel(title = "Calc_BCG_About"
-                    #            ,includeHTML(file.path("www"
-                    #                                   , "rmd_html"
-                    #                         , "ShinyHTML_Calc_BCG_1About.html"))
-                    #            )
-                    # , tabPanel(title = "Calc_BCG_Input"
-                    #            ,includeHTML(file.path("www"
-                    #                                   , "rmd_html"
-                    #                         , "ShinyHTML_Calc_BCG_2Input.html"))
-                    #            )
                     , tabPanel(title = "Calc_BCG_Output"
                                ,includeHTML(file.path("www"
                                                       , "rmd_html"

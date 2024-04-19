@@ -6,14 +6,11 @@ function() {
     , sidebarLayout(
         sidebarPanel(
           # 0. Progress
-          #, tags$hr()
           h4("Load File")
           , p("Only comma-separated or tab-separated files.")
           , h5("Select file parameters")
-          #, checkboxInput('header', 'Header', TRUE)
           , radioButtons("sep", "Separator",
                          c(Comma = ",",
-                          # Semicolon = ";",
                            Tab = "\t"),
                          ',')
           , fileInput("fn_input"
