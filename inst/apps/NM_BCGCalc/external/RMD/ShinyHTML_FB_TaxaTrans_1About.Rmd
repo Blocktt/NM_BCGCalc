@@ -55,7 +55,7 @@ There are three required fields:
 
 -   TaxaID
 
-    -   Unique taxa name
+    -   Unique taxa name (use scientific name for both bugs and fish)
 
 -   Count of individuals (e.g., N_Taxa)
 

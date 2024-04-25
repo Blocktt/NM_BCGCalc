@@ -193,7 +193,7 @@ shinyServer(function(input, output) {
   })## UI_colnames
 
   output$UI_taxatrans_user_col_taxaid <- renderUI({
-    str_col <- "Column, TaxaID"
+    str_col <- "Column, TaxaID (Scientific Name)"
     selectInput("taxatrans_user_col_taxaid"
                 , label = str_col
                 , choices = c("", names(df_import()))
